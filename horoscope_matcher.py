@@ -109,7 +109,10 @@ def main():
 					print('\n\tSame dasa running, check bukthi to proceed further')
 				elif(groom_dasa in ['suryan','guru'] or (nathan for nathan in natchatra_nathan.get(groom_dasa_nathan) if nathan in ['sani','sukran','rahu','ketu'])):
 					print('\n\tIncompatible dasa running for groom')
-				elif(groom_lagna_house.index(suryan_house[0]) in [6,7,11]):
+				else: 
+					pass
+				
+				if(groom_lagna_house.index(suryan_house[0]) in [6,7,11]):
 					print('\n\tSurya Dosham!')
 				else:
 					pass

@@ -4,13 +4,13 @@
 bride_lagna = 'kanya'
 bride_chandran = 'meena'
 bride_dasa = 'sukran'
-dosha_match_count = 0
+
 # List of houses in clockwise order
 house_list = ['mesha','rishaba','mithuna','karkadaga','simha','kanya','thula','vrichiga','dhanusu','makara','kumbha','meena']
 # List of planets in clockwise order
 planet_list = ['sevvai','sukran','budhan','chandran','suryan', 'budhan','sukran','sevvai','guru','sani','sani','guru']
 # Compatible natchatram list for Cena
-natchatra_list = ['aayilyam','hastham','ketai','magam','punarpoosam','revathi','sadhayam','swathi','tiruvadurai','tiruvonam','uthram','uthradam']
+natchatra_list = ['tiruvonam','tiruvadurai','punarpoosam','uthram','aayilyam','hastham','swathi','revathi','ketai','magam','uthradam','sadhayam','uthrattadhi']
 # Dictionary mapping of lagna subar planets for each house
 lagna_subar = {'mesha':['sevvai','suryan','guru'],'rishaba':['sukran','budhan','sani'],'mithuna':['budhan','sukran','sani'],'karkadaga':['chandran','sevvai','guru'],'simha':['suryan','sevvai','guru'],'kanya':['budhan','sukran','sani'],'thula':['sukran','sani','budhan'],'vrichiga':['sevvai','guru','suryan'],'dhanusu':['guru','sevvai','suryan'],'makara':['sani','sukran','budhan'],'kumbam':['sani','budhan','sukran'],'meena':['guru','chandran','sevvai']}
 # Dictionary mapping of natchatra nathan natchatrams for each planet
@@ -44,10 +44,10 @@ def main():
 			rasi_check = abs(house_list.index(bride_chandran) - house_list.index(groom_chandran))
 			# Start filling the rasi chart
 			if not(lagna_check in [5,7]) and not(rasi_check in [5,7]):
-				print('\nList of planets: \n\n\tbudhan, chandran, guru, ketu, rahu, sani, sevvai, sukran, suryan')
+				print('\nList of planets: \n\n\tsuryan, chandran, sevvai, sukran, budhan, guru, sani, rahu, ketu')
 				groom_dasa = input("\nEnter groom's currently running dasa: ")
 				groom_dasa_nathan = input("\nEnter groom's dasa natchatra nathan: ")
-				print('\nList of natchatrams:\n\n\taayilyam, anusham, aswini, avittam, barani, chithirai,  hastham, ketai, krithigai,\n\t magam, moolam, mrigasirisham, pooradam, pooram, poorattadhi, poosam,  punarpoosam, revathi,\n\t rohini, sadhayam, swathi, tiruvonam, tiruvadurai, uthram,  uthradam, uthrattadhi, visaagam')
+				print('\nList of natchatrams:\n\n\taswini, moolam, barani, pooram, pooradam, krithigai, rohini, mrigasirisham, chithirai,\n\tavittam, visaagam, poorattadhi, tiruvonam, tiruvadurai, punarpoosam, poosam, anusham, uthrattadhi,\n\tuthram, aayilyam, hastham, swathi, revathi, ketai, magam, uthradam, sadhayam')
 				sani_natchatram = input("\nEnter sani's natchatram from chart: ")
 				print('\nLets start filling the chart: ')
 				for house in house_list:
@@ -58,7 +58,7 @@ def main():
 						planets_in_house.append('empty')
 						
 					else:
-						print('\nList of planets: \n\n\tbudhan, chandran, guru, ketu, rahu, sani, sevvai, sukran, suryan')
+						print('\nList of planets: \n\n\tsuryan, chandran, sevvai, sukran, budhan, guru, sani, rahu, ketu')
 						for num in range(pnum):
 							planet_name = input('Enter planet:	')
 							planets_in_house.append(planet_name)
@@ -106,23 +106,23 @@ def main():
 
 
 				print('\n\n######################################### RESULTS #########################################')
-				print('\n Dosham List')
+
 				if(groom_dasa == bride_dasa):
 					print('\n\tSame dasa running, check bukthi to proceed further')
 				elif(groom_dasa in ['suryan','guru']):
-					print('\n\tIncompatible dasa running for groom! Suryan or Guru dasa running')
+					print('\n\tIncompatible dasa running for groom')
 				elif(groom_dasa_nathan in ['sani','sukran','rahu','ketu']):
-					print('\n\tIncompatible dasa running for groom! Dasa natchatra nathan is either sani, sukran, rahu or ketu')
+					print('\n\tIncompatible dasa running for groom')
 				else: 
 					pass
-				
+				# print('Suryan house',suryan_house[0])
 				if(groom_lagna_house.index(suryan_house[0]) in [6,7,11]):
-					print('\n\tSurya Dosham! Suryan in 7, 8 or 12th house')
+					print('\n\tSurya Dosham!')
 				else:
 					pass
 
 				if(groom_lagna_house.index(sani_house[0]) in [0,1,4,6,7,11]):
-					print('\n\tSani Dosham! Sani in lagnam, 2, 5, 7, 8 or 12th house')
+					print('\n\tSani Dosham!')
 					if (sani_natchatra_athipathi in lagna_subar.get(groom_lagna)):
 						print('\t\tMitigated by lagna subar saaram')
 					elif sani_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sani_house[0])) in [4,6,8]):
@@ -135,7 +135,6 @@ def main():
 				if(groom_lagna_house.index(rahu_house[0]) in [0,1,4,6,7,11]):
 					if(groom_lagna_house.index(rahu_house[0]) in [4,11]):
 						print('\n\tMild Rahu Dhosham')
-						dosha_match_count = dosha_match_count + 1
 						if (rahu_natchatra_athipathi in lagna_subar.get(groom_lagna)):
 							print('\t\tMitigated by lagna subar saaram')
 						elif rahu_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(rahu_house[0])) in [4,6,8]):
@@ -164,24 +163,8 @@ def main():
 				else:
 					pass
 
-				if(groom_lagna_house.index(sevvai_house[0]) in [1,3,6,7,11]):
-					print('\n\tSevvai Dosham! Sevvai in 2,4,7,8,12 places from lagnam')
-					if(groom_lagna_house[0] in ['mesha','karkadaga','simha','vrichiga','dhanusu','meena']):
-						print('\t\tAttained nivarthi by exceptional lagna property')
-					elif sevvai_house[0] in ['mesha','vrichiga']:
-						print('\t\tAttained nivarthi by own house property')
-					elif sevvai_house[0] == 'makaram':
-						if not groom_lagna_house[0] in ['mithuna','kumba']:
-							print('\t\tAttained nivarthi by uchcham property')
-					elif sevvai_house[0] == 'karkadaga':
-						print('\t\tAttained nivarthi by neecham property')
-					elif sevvai_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sevvai_house[0])) in [4,6,8]):
-						print('\t\tAttained nivarthi by guru influence')
-						dosha_match_count = dosha_match_count + 1
-					elif (sevvai_natchatra_athipathi in lagna_subar.get(groom_lagna)):
-							print('\t\tAttained nivarthi by lagna subar saaram')
-				elif(abs(groom_lagna_house.index(chandran_house[0]) - groom_lagna_house.index(sevvai_house[0])) in [1,3,6,7,11]):	
-					print('\n\tSevvai Dosham! Sevvai in 2,4,7,8,12 places from rasi')
+				if(groom_lagna_house.index(sevvai_house[0]) in [1,3,6,7,11]) or (abs(groom_lagna_house.index(chandran_house[0]) - groom_lagna_house.index(sevvai_house[0])) in [1,3,6,7,11]):	
+					print('\n\tSevvai Dosham! Sevvai in 2,4,7,8,12 places from lagnam or rasi')
 					if(groom_lagna_house[0] in ['mesha','karkadaga','simha','vrichiga','dhanusu','meena']):
 						print('\t\tAttained nivarthi by exceptional lagna property')
 					elif sevvai_house[0] in ['mesha','vrichiga']:
@@ -197,86 +180,6 @@ def main():
 							print('\t\tAttained nivarthi by lagna subar saaram')			
 				else:
 					pass
-		
-				# Extracting the 7th, 8th and 10th house needed to check kalathara dosham
-				k_house = [house  for (house, planet) in groom_chart.items() if groom_planet_house[6] in planet]
-				k_house1 = [house  for (house, planet) in groom_chart.items() if groom_planet_house[7] in planet]
-				k_house2 = [house  for (house, planet) in groom_chart.items() if groom_planet_house[9] in planet]
-				# Getting the house where the 7th house owner planet currently resides in the chart
-				neecham_house_check = [house  for (house, planet) in groom_chart.items() if planet_list[house_list.index(k_house[0])] in planet]
-				
-				if(groom_lagna_house.index(k_house[0]) in [2,4]):
-					print('\n\tKalathara Dosham! 7th house owner in 3 or 5th place')
-					if(k_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])) in [4,6,8])):
-						print('\t\tAttained nivarthi by guru influence')
-				elif (groom_lagna_house.index(k_house1[0]) == 4):
-					print('\n\tKalathara Dosham! 8th house owner in 5th place')
-					if(k_house1[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])) in [4,6,8])):
-						print('\t\tAttained nivarthi by guru influence')
-				elif (groom_lagna_house.index(k_house2[0]) == 6):
-					print('\n\tKalathara Dosham! 10th house owner in 7th place')
-					if(k_house2[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])) in [4,6,8])):
-						print('\t\tAttained nivarthi by guru influence')
-				elif (planet_list[house_list.index(k_house[0])] in neecham_houses.get(neecham_house_check[0])):
-					print('\n\tKalathara Dosham! 7th house owner attaining neecham')
-					if(k_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])) in [4,6,8])):
-						print('\t\tAttained nivarthi by guru influence')
-				else:
-					pass
-				
-				if((abs(groom_lagna_house.index(chandran_house[0])-groom_lagna_house.index(sani_house[0])) in [2,6,9])): 
-					print('\n\tPunarpu Dosham! Sani influence on chandran')
-				elif(chandran_house[0] == sani_house[0]): 
-					print('\n\tPunarpu Dosham! Sani and chandran together')
-				elif(chandran_house[0] in ['makara','kumbha']):
-					print('\n\tPunarpu Dosham! Chandran in Makara or kumbha rasi')
-				elif(sani_house[0] == 'karkadaga'):
-					print('\n\tPunarpu Dosham! Sani in Karkadaga rasi')
-				elif(sani_natchatram in natchatra_nathan.get('chandran')):
-					print('\n\tPunarpu Dosham! Sani natchatram in chandran natchatra nathan list')
-				elif(natchatram_response in natchatra_nathan.get('sani')):
-					print('\n\tPunarpu Dosham! Chandran natchatram in sani natchatra nathan list')
-				else:
-					pass
-				
-				# Extracting 5th, 7th and 8th house from lagnam needed for putra dosham
-				p_house_5 = [house  for (house, planet) in groom_chart.items() if groom_planet_house[4] in planet]
-				p_house_7 = [house  for (house, planet) in groom_chart.items() if groom_planet_house[6] in planet]
-				p_house_8 = [house  for (house, planet) in groom_chart.items() if groom_planet_house[7] in planet]
-				p_house_12 = [house  for (house, planet) in groom_chart.items() if groom_planet_house[11] in planet]
-				if groom_lagna_house.index(p_house_5[0]) == 7:
-					print('\n\tPutra Dosham! 5th house owner in 7th place')
-				elif groom_lagna_house.index(p_house_7[0]) == 4:
-					print('\n\tPutra Dosham! 7th house owner in 5th place')
-				elif p_house_5 == groom_lagna_house[7] and p_house_7 == groom_lagna_house[4]:
-					print('\n\tPutra Dosham! 5th house owner in 8th house and 7th house owner in 5th house')
-				elif p_house_5 == groom_lagna_house[7] and p_house_8 == groom_lagna_house[4]:
-					print('\n\tPutra Dosham! 5th house owner in 8th house and 8th house owner in 5th house')
-				elif p_house_5 == groom_lagna_house[11] and p_house_12 == groom_lagna_house[4]:
-					print('\n\tPutra Dosham! 5th house owner in 12th house and 12th house owner in 5th house')
-				elif groom_lagna_house.index(sevvai_house[0]) == 0:
-					print('\n\tPutra Dosham! Sevvai in lagnam')
-				elif groom_lagna_house.index(sani_house[0]) == 6:	  
-					print('\n\tPutra Dosham! Sani in 7th house')
-				elif groom_lagna_house.index(suryan_house[0]) == 11:
-					print('\n\tPutra Dosham! Suryan in 12th house')
-				elif (abs(groom_lagna_house.index(chandran_house[0]) - groom_lagna_house.index(sani_house[0])) in [2,6,9]):
-					print('\n\tPutra Dosham! Sani parvai on chandran')
-				elif (abs(0 #This is Lagna index value
-						- groom_lagna_house.index(sani_house[0])) in [2,6,9]):
-					print('\n\tPutra Dosham! Sani parvai on lagnam')
-				elif (abs(groom_lagna_house.index(p_house_5[0])-groom_lagna_house.index(sani_house[0])) in [2,6,9]):
-					print('\n\tPutra Dosham! Sani parvai on 5th house')
-				elif (groom_lagna_house.index(sani_house[0]) in [0,4,7,11]): 
-					print('\n\tPutra Dosham! Sani in lagnam, 5th, 8th or 12th house')
-				elif (groom_lagna_house.index(sevvai_house[0]) in [0,4,7,11]):
-					print('\n\tPutra Dosham! Sevvai in lagnam, 5th, 8th, 12th house')
-				elif (p_house_5 == sevvai_house[0] and groom_lagna_house.index(sevvai_house[0]) == 4 and (abs(groom_lagna_house.index(p_house_5)-groom_lagna_house.index(sani_house[0])) in [2,6,9])):
-					print('\n\tPutra Dosham! 5th house owner with sevvai, both in 5th place and have sani paarvai')
-				else:
-					pass
-
-				print('PLANETORY CONJUNCTION:\n')
 
 				if(chandran_house[0] == ketu_house[0]):
 					print('\n\tChandran-ketu together!')
@@ -343,68 +246,89 @@ def main():
 
 				if(sukran_house[0] == suryan_house[0] or sukran_house[0] == sani_house[0]  or sukran_house[0] == rahu_house[0] or sukran_house[0] == ketu_house[0] or sukran_house[0] == sevvai_house[0]):
 					print('\n\tSukran with either suryan, rahu, ketu, sevvai or sani')
-					dosha_match_count = dosha_match_count + 1
 					if(sukran_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukran_house[0])) in [4,6,8])):
 						print('\t\tAttained nivarthi by guru influence')
 				else:
 					pass
 
-				if(sixth_house[0] == seventh_house[0]): 
-					print('\n\t6 and 7th house planets together') 
+				if(sixth_house[0] == seventh_house[0] or seventh_house[0] == eighth_house[0] or seventh_house[0] == twelfth_house[0]):
+					print('\n\t6 and 7 or 7 and 8 or 7 and 12 house planets together')
 					if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
 						print('\t\tAttained nivarthi by guru influence')				
-				else:
-					pass
-				if (seventh_house[0] == eighth_house[0]): 
-					print('\n\t7 and 8th house planets together') 
-					if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-						print('\t\tAttained nivarthi by guru influence')				
-				else:
-					pass
-				if (seventh_house[0] == twelfth_house[0]):
-					print('\n\t7 and 12th house planets together')
-					if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-						print('\t\tAttained nivarthi by guru influence')				
-				else:
-					pass
-				if(second_house[0] == sixth_house[0]): 
-					print('\n\t2 and 6th planets together')
+				elif(second_house[0] == sixth_house[0]): 
+					print('\n\t2 and 6 planets together')
 					if(second_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0])) in [4,6,8])):
 						print('\t\tAttained nivarthi by guru influence')	
-				else:
-					pass
-				if(second_house[0] == eighth_house[0]): 
-					print('\n\t2 and 8th house planets together')
+				elif(second_house[0] == eighth_house[0]): 
+					print('\n\t2 and 8 house planets together')
 					if(second_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0])) in [4,6,8])):
 						print('\t\tAttained nivarthi by guru influence')	
-				else:
-					pass
-				if(second_house[0] == twelfth_house[0]):
-					print('\n\t2 and 12th house planets together')
+				elif(second_house[0] == twelfth_house[0]):
+					print('\n\t2 and 12 house planets together')
 					if(second_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0])) in [4,6,8])):
 						print('\t\tAttained nivarthi by guru influence')				
-				else:
-					pass
-				if(sukran_house[0] == sixth_house[0]):
-					print('\n\tSukran and 6th house planets together') 
+				elif(sukran_house[0] == sixth_house[0] or sukran_house[0] == eighth_house[0] or sukran_house[0] == twelfth_house[0]):
+					print('\n\tSukran and 6 or sukran and 8 or sukran and 12 house planets together')
 					if(sukran_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukran_house[0])) in [4,6,8])):
 						print('\t\tAttained nivarthi by guru influence')
 				else:
 					pass
-				if(sukran_house[0] == eighth_house[0]): 
-					print('\n\tSukran and 8th house planets together') 
-					if(sukran_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukran_house[0])) in [4,6,8])):
+
+				# Extracting the 7th, 8th and 10th house needed to check kalathara dosham
+				k_house = [house  for (house, planet) in groom_chart.items() if groom_planet_house[6] in planet]
+				k_house1 = [house  for (house, planet) in groom_chart.items() if groom_planet_house[7] in planet]
+				k_house2 = [house  for (house, planet) in groom_chart.items() if groom_planet_house[9] in planet]
+				# Getting the house where the 7th house owner planet currently resides in the chart
+				neecham_house_check = [house  for (house, planet) in groom_chart.items() if planet_list[house_list.index(k_house[0])] in planet]
+				
+				if(groom_lagna_house.index(k_house[0]) in [2,4]):
+					print('\n\tKalathara Dosham!')
+					if(k_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])) in [4,6,8])):
+						print('\t\tAttained nivarthi by guru influence')
+				elif (groom_lagna_house.index(k_house1[0]) == 4):
+					print('\n\tKalathara Dosham!')
+					if(k_house1[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])) in [4,6,8])):
+						print('\t\tAttained nivarthi by guru influence')
+				elif (groom_lagna_house.index(k_house2[0]) == 6):
+					print('\n\tKalathara Dosham!')
+					if(k_house2[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])) in [4,6,8])):
+						print('\t\tAttained nivarthi by guru influence')
+				elif (planet_list[house_list.index(k_house[0])] in neecham_houses.get(neecham_house_check[0])):
+					print('\n\tKalathara Dosham!')
+					if(k_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])) in [4,6,8])):
 						print('\t\tAttained nivarthi by guru influence')
 				else:
 					pass
-				if(sukran_house[0] == twelfth_house[0]):
-					print('\n\tSukran and 12th house planets together')
-					if(sukran_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukran_house[0])) in [4,6,8])):
-						print('\t\tAttained nivarthi by guru influence')
+				
+				if((abs(groom_lagna_house.index(chandran_house[0])-groom_lagna_house.index(sani_house[0])) in [2,6,9]) or chandran_house[0] == sani_house[0] or chandran_house[0] in ['makara','kumbha'] or sani_house[0] == 'karkadaga' or sani_natchatram in natchatra_nathan.get('chandran') or natchatram_response in natchatra_nathan.get('sani')):
+					print('\n\tPunarpu Dosham!')
 				else:
 					pass
-				if(dosha_match_count == 3):
-					print('DOSHAM COMBINATION MATCHING WITH BRIDE! SUITABLE MATCH')
+				
+				# Extracting 5th, 7th and 8th house from lagnam needed for putra dosham
+				p_house_5 = [house  for (house, planet) in groom_chart.items() if groom_planet_house[4] in planet]
+				p_house_7 = [house  for (house, planet) in groom_chart.items() if groom_planet_house[6] in planet]
+				p_house_8 = [house  for (house, planet) in groom_chart.items() if groom_planet_house[7] in planet]
+				p_house_12 = [house  for (house, planet) in groom_chart.items() if groom_planet_house[11] in planet]
+				if groom_lagna_house.index(p_house_5[0]) == 7 or groom_lagna_house.index(p_house_7[0]) == 4:
+					print('\n\tPutra Dosham!')
+				elif p_house_5 == groom_lagna_house[7] and p_house_7 == groom_lagna_house[4]:
+					print('\n\tPutra Dosham!')
+				elif p_house_5 == groom_lagna_house[7] and p_house_8 == groom_lagna_house[4]:
+					print('\n\tPutra Dosham!')
+				elif p_house_5 == groom_lagna_house[11] and p_house_12 == groom_lagna_house[4]:
+					print('\n\tPutra Dosham!')
+				elif groom_lagna_house.index(sevvai_house[0]) == 0 or groom_lagna_house.index(sani_house[0]) == 6 or groom_lagna_house.index(suryan_house[0]) == 11:
+					print('\n\tPutra Dosham')
+				elif (abs(groom_lagna_house.index(chandran_house[0]) - groom_lagna_house.index(sani_house[0])) in [2,6,9]) or (abs(0 #This is Lagna index value
+				- groom_lagna_house.index(sani_house[0])) in [2,6,9]) or (abs(groom_lagna_house.index(p_house_5[0])-groom_lagna_house.index(sani_house[0])) in [2,6,9]):
+					print('\n\tPutra Dosham')
+				elif (groom_lagna_house.index(sani_house[0]) in [0,4,7,11] or groom_lagna_house.index(sevvai_house[0]) in [0,4,7,11]):
+					print('\n\tPutra Dosham')
+				elif (p_house_5 == sevvai_house[0] and groom_lagna_house.index(sevvai_house[0]) == 4 and (abs(groom_lagna_house.index(p_house_5)-groom_lagna_house.index(sani_house[0])) in [2,6,9])):
+					print('\n\tPutra Dosham')
+				else:
+					pass
 			else:	
 				print('\n\tNo lagna or rasi match! Exiting')
 		else: 

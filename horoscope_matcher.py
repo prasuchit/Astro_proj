@@ -118,9 +118,9 @@ def main():
 			print('\n\n######################################### RESULTS #########################################')
 			print('\nDOSHAM LIST:')
 			if (lagna_check in [5,7]):
-				print('\n\tLagnam in ',lagna_check)
+				print('\n\tLagnam in ',lagna_check+1)
 			if (rasi_check in [5,7]):
-				print('\n\tRasi in ',rasi_check)
+				print('\n\tRasi in ',rasi_check+1)
 			if(groom_dasa == bride_dasa):
 				print('\n\tSame ',groom_dasa,' dasa running, check bukthi to proceed further')
 			elif(groom_dasa in ['sury','guru']):
@@ -131,16 +131,16 @@ def main():
 				pass
 			
 			if(sury_index in [6,7,11]):
-				print('\n\tSurya Dosham! Sury in ',sury_index,' house')
+				print('\n\tSurya Dosham! Sury in ',sury_index+1,' house')
 			else:
 				pass
 
 			if(sani_index in [0,1,4,6,7,11]):
-				print('\n\tSani Dosham! Sani in ',sani_index,' house')
+				print('\n\tSani Dosham! Sani in ',sani_index+1,' house')
 				if (sani_natchatra_athipathi in lagna_subar.get(groom_lagna)):
 					print('\t\tMitigated by lagna subar saaram')
 				elif sani_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - sani_index) in [4,6,8]):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index) + 1,' place')
 				elif sani_house[0] in ['makara', 'kumbha']:
 					print('\t\tAttained nivarthi by aatchi at ',sani_house[0])
 			else:
@@ -148,39 +148,39 @@ def main():
 			
 			if(rahu_index in [0,1,4,6,7,11]):
 				if(rahu_index in [4,11]):
-					print('\n\tMild Rahu Dhosham! Rahu in ', rahu_index)
+					print('\n\tMild Rahu Dhosham! Rahu in ', rahu_index+1)
 					# dosha_match_count = dosha_match_count + 1
 					if (rahu_natchatra_athipathi in lagna_subar.get(groom_lagna)):
 						print('\t\tMitigated by lagna subar saaram')
 					elif rahu_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - rahu_index) in [4,6,8]):
-						print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - rahu_index),' place')
+						print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - rahu_index) + 1,' place')
 				else:	
-					print('\n\tRahu Dosham! Rahu in ',rahu_index)
+					print('\n\tRahu Dosham! Rahu in ',rahu_index+1)
 					if (rahu_natchatra_athipathi in lagna_subar.get(groom_lagna)):
 						print('\t\tMitigated by lagna subar saaram')
 					elif rahu_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - rahu_index) in [4,6,8]):
-						print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - rahu_index),' place')
+						print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - rahu_index) + 1,' place')
 			else:
 				pass
 
 			if(ketu_index in [0,1,4,6,7,11]):
 				if(ketu_index in [4,11]):
-					print('\n\tMild Ketu Dhosham! Ketu in 5 or 12')
+					print('\n\tMild Ketu Dhosham! Ketu in ', ketu_index+1)
 					if (ketu_natchatra_athipathi in lagna_subar.get(groom_lagna)):
 						print('\t\tMitigated by lagna subar saaram')
 					elif ketu_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - ketu_index) in [4,6,8]):
-						print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - ketu_index),' place')
+						print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - ketu_index)+1,' place')
 				else:	
-					print('\n\tKetu Dosham! Ketu in ',ketu_index)
+					print('\n\tKetu Dosham! Ketu in ',ketu_index+1)
 					if (ketu_natchatra_athipathi in lagna_subar.get(groom_lagna)):
 						print('\t\tMitigated by lagna subar saaram')
 					elif ketu_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - ketu_index) in [4,6,8]):
-						print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - ketu_index),' place')
+						print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - ketu_index)+1,' place')
 			else:
 				pass
 
 			if(chev_index in [1,3,6,7,11]):
-				print('\n\tChev Dosham! Chev in ',chev_index,' place from lagnam')
+				print('\n\tChev Dosham! Chev in ',chev_index+1,' place from lagnam')
 				if(groom_lagna_house[0] in ['mesha','karkadaga','simha','vrichiga','dhanusu','meena']):
 					print('\t\tAttained nivarthi by exceptional lagna property')
 				elif chev_house[0] in ['mesha','vrichiga']:
@@ -191,12 +191,12 @@ def main():
 				elif chev_house[0] == 'karkadaga':
 					print('\t\tAttained nivarthi by neecham property')
 				elif chev_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - chev_index) in [4,6,8]):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - chev_index),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - chev_index)+1,' place')
 					# dosha_match_count = dosha_match_count + 1
 				elif (chev_natchatra_athipathi in lagna_subar.get(groom_lagna)):
 						print('\t\tAttained nivarthi by lagna subar saaram')
 			elif(abs(groom_lagna_house.index(chan_house[0]) - chev_index) in [1,3,6,7,11]):	
-				print('\n\tChev Dosham! Chev in ',abs(groom_lagna_house.index(chan_house[0]) - chev_index),' place from rasi')
+				print('\n\tChev Dosham! Chev in ',abs(groom_lagna_house.index(chan_house[0]) - chev_index) +1,' place from rasi')
 				if(groom_lagna_house[0] in ['mesha','karkadaga','simha','vrichiga','dhanusu','meena']):
 					print('\t\tAttained nivarthi by exceptional lagna property')
 				elif chev_house[0] in ['mesha','vrichiga']:
@@ -207,7 +207,7 @@ def main():
 				elif chev_house[0] == 'karkadaga':
 					print('\t\tAttained nivarthi by neecham property')
 				elif chev_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - chev_index) in [4,6,8]):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - chev_index),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - chev_index)+1,' place')
 				elif (chev_natchatra_athipathi in lagna_subar.get(groom_lagna)):
 						print('\t\tAttained nivarthi by lagna subar saaram')			
 			else:
@@ -221,21 +221,21 @@ def main():
 			neecham_house_check = [house  for (house, planet) in groom_chart.items() if planet_list[house_list.index(k_house[0])] in planet]
 			
 			if(groom_lagna_house.index(k_house[0]) in [2,4]):
-				print('\n\tKalathara Dosham! 7th house lord in ',groom_lagna_house.index(k_house[0]),' place')
+				print('\n\tKalathara Dosham! 7th house lord in ',groom_lagna_house.index(k_house[0])+1,' place')
 				if(k_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0]))+1,' place')
 			elif (groom_lagna_house.index(k_house1[0]) == 4):
 				print('\n\tKalathara Dosham! 8th house lord in 5th place')
 				if(k_house1[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0]))+1,' place')
 			elif (groom_lagna_house.index(k_house2[0]) == 6):
 				print('\n\tKalathara Dosham! 10th house lord in 7th place')
 				if(k_house2[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0]))+1,' place')
 			elif (planet_list[house_list.index(k_house[0])] in neecham_houses.get(neecham_house_check[0])):
 				print('\n\tKalathara Dosham! 7th house lord attaining neecham')
 				if(k_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0]))+1,' place')
 			else:
 				pass
 			
@@ -283,9 +283,9 @@ def main():
 			elif ((groom_lagna_house.index(p_house_5[0])-sani_index) in [2,6,9]):
 				print('\n\tPutra Dosham! Sani parvai on 5th house')
 			elif (sani_index in [0,4,7,11]): 
-				print('\n\tPutra Dosham! Sani in ', sani_index,' house')
+				print('\n\tPutra Dosham! Sani in ', sani_index+1,' house')
 			elif (chev_index in [0,4,7,11]):
-				print('\n\tPutra Dosham! Chev in ',chev_index,' house')
+				print('\n\tPutra Dosham! Chev in ',chev_index+1,' house')
 			elif (p_house_5 == chev_house[0] and chev_index == 4 and ((groom_lagna_house.index(p_house_5)-sani_index) in [2,6,9])):
 				print('\n\tPutra Dosham! 5th house lord with chev, both(5th house lord and chev) currently in 5th place and have sani paarvai')
 			else:
@@ -296,79 +296,79 @@ def main():
 			if(chan_house[0] == ketu_house[0]):
 				print('\n\tchan-ketu together!')
 				if(chan_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0])),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0]))+1,' place')
 			else:
 				pass
 			
 			if(chan_house[0] == budh_house[0]):
 				print('\n\tchan-budh together!')
 				if(chan_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0])),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0]))+1,' place')
 			else:
 				pass
 			
 			if(sukr_house[0] == ketu_house[0]):
 				print('\n\tsukr-ketu together!')
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1,' place')
 			else:
 				pass
 			
 			if(chev_house[0] == sani_house[0]):
 				print('\n\tchev-sani together!')
 				if(chev_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - chev_index) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - chev_index),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - chev_index)+1,' place')
 			else:
 				pass
 
 			if(sukr_house[0] == chan_house[0]):
 				print('\n\tsukr-chan together!')
 				if(chan_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0])),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0]))+1,' place')
 			else:
 				pass
 
 			if(chan_house[0] == sani_house[0]):
 				print('\n\tchan-sani together!')
 				if(chan_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0])),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0]))+1,' place')
 			else:
 				pass
 			
 			if(sukr_house[0] == chev_house[0]):
 				print('\n\tchev-sukr together!')
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1,' place')
 			else:
 				pass
 
 			if(sukr_house[0] == sury_house[0]):
 				print('\n\tsury-sukr together!')
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1,' place')
 			else:
 				pass
 
 			if(seventh_house[0] == sury_house[0]):
 				print('\n\t7th house lord with sury')
 				if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])),' place')				
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1,' place')				
 			elif(seventh_house[0] == sani_house[0]):
 				print('\n\t7th house lord with sani')
 				if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])),' place')				
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1,' place')				
 			if(seventh_house[0] == rahu_house[0]):
 				print('\n\t7th house lord with rahu')
 				if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])),' place')				
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1,' place')				
 			if(seventh_house[0] == ketu_house[0]):
 				print('\n\t7th house lord with ketu')
 				if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])),' place')				
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1,' place')				
 			if(seventh_house[0] == chev_house[0]):
 				print('\n\t7th house lord with chev')
 				if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])),' place')				
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1,' place')				
 			else:
 				pass
 
@@ -376,82 +376,82 @@ def main():
 				print('\n\tsukr with sury')
 				# dosha_match_count = dosha_match_count + 1
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index) + 1,' place')
 			elif(sukr_house[0] == rahu_house[0]):
 				print('\n\tsukr with rahu')
 				# dosha_match_count = dosha_match_count + 1
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index) + 1,' place')
 			elif(sukr_house[0] == ketu_house[0]):
 				print('\n\tsukr with ketu')
 				# dosha_match_count = dosha_match_count + 1
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index) + 1,' place')
 			elif(sukr_house[0] == chev_house[0]):
 				print('\n\tsukr with chev')
 				# dosha_match_count = dosha_match_count + 1
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index) + 1,' place')
 			elif(sukr_house[0] == sani_house[0]):
 				print('\n\tsukr with sani')
 				# dosha_match_count = dosha_match_count + 1
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index) + 1,' place')
 			else:
 				pass
 
 			if(sixth_house[0] == seventh_house[0]): 
 				print('\n\t6 and 7th house lords together') 
 				if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])),' place')				
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1,' place')				
 			else:
 				pass
 			if (seventh_house[0] == eighth_house[0]): 
 				print('\n\t7 and 8th house lords together') 
 				if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])),' place')				
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1,' place')				
 			else:
 				pass
 			if (seventh_house[0] == twelfth_house[0]):
 				print('\n\t7 and 12th house lords together')
 				if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])),' place')				
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1,' place')				
 			else:
 				pass
 			if(second_house[0] == sixth_house[0]): 
 				print('\n\t2 and 6th house lords together')
 				if(second_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0])),' place')	
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0]))+1,' place')	
 			else:
 				pass
 			if(second_house[0] == eighth_house[0]): 
 				print('\n\t2 and 8th house lords together')
 				if(second_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0])),' place')	
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0]))+1,' place')	
 			else:
 				pass
 			if(second_house[0] == twelfth_house[0]):
 				print('\n\t2 and 12th house lords together')
 				if(second_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0])),' place')				
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0]))+1,' place')				
 			else:
 				pass
 			if(sukr_house[0] == sixth_house[0]):
 				print('\n\tsukr and 6th house lords together') 
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1,' place')
 			else:
 				pass
 			if(sukr_house[0] == eighth_house[0]): 
 				print('\n\tsukr and 8th house lords together') 
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1,' place')
 			else:
 				pass
 			if(sukr_house[0] == twelfth_house[0]):
 				print('\n\tsukr and 12th house lords together')
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])),' place')
+					print('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1,' place')
 			else:
 				pass
 ##################################################################################################################################################################################

@@ -42,8 +42,8 @@ def main():
 			# groom_dasa_nathan = 'chan'
 			# sani_natchatram = ' '
 			# Checking if lagnam and rasi of groom and bride are not in 6th or 8th positions from one another
-			lagna_check = abs(house_list.index(bride_lagna) - house_list.index(groom_lagna))
-			rasi_check = abs(house_list.index(bride_chan) - house_list.index(groom_chan))
+			lagna_check = (house_list.index(bride_lagna) - house_list.index(groom_lagna))
+			rasi_check = (house_list.index(bride_chan) - house_list.index(groom_chan))
 			# Start filling the rasi chart
 			print('\nList of planets: \n\n\tbudh, chan, guru, ketu, rahu, sani, chev, sukr, sury')
 			groom_dasa = input("\nEnter groom's currently running dasa: ")

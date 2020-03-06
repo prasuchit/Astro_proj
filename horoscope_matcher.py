@@ -31,7 +31,7 @@ def main():
 		groom_planet_house = []
 		groom_name = input("Enter groom's name: ")
 		f = open(os.path.join(outpath, '%s.txt' % groom_name), 'w+')
-		print('Compatible natchatram list: \n\t')
+		print("Compatible natchatram list: \n\t")
 		print(", ".join(natchatra_list))
 		natchatram_response = input("\nEnter Groom natchatra:	")
 		# natchatram_response = 'uthram'
@@ -50,10 +50,10 @@ def main():
 			lagna_check = (house_list.index(bride_lagna) - house_list.index(groom_lagna))
 			rasi_check = (house_list.index(bride_chan) - house_list.index(groom_chan))
 			# Start filling the rasi chart
-			print('\nList of planets: \n\n\tbudh, chan, guru, ketu, rahu, sani, chev, sukr, sury')
+			print("\nList of planets: \n\n\tbudh, chan, guru, ketu, rahu, sani, chev, sukr, sury")
 			groom_dasa = input("\nEnter groom's currently running dasa: ")
 			groom_dasa_nathan = input("\nEnter groom's dasa natchatra nathan: ")
-			print('\nList of natchatrams:\n\n\taayilyam, anusham, aswini, avittam, barani, chithirai,  hastham, kettai, krithigai,\n\t magam, moolam, mrigasirisham, pooradam, pooram, poorattadhi, poosam,  punarpoosam, revathi,\n\t rohini, sadhayam, swathi, tiruvonam, tiruvadurai, uthram,  uthradam, uthrattadhi, visaagam')
+			print("\nList of natchatrams:\n\n\taayilyam, anusham, aswini, avittam, barani, chithirai,  hastham, kettai, krithigai,\n\t magam, moolam, mrigasirisham, pooradam, pooram, poorattadhi, poosam,  punarpoosam, revathi,\n\t rohini, sadhayam, swathi, tiruvonam, tiruvadurai, uthram,  uthradam, uthrattadhi, visaagam")
 			sani_natchatram = input("\nEnter sani's natchatram from chart: ")
 			chev_natchatra_athipathi = input("Enter chev's saara nathan: ")
 			rahu_natchatra_athipathi = input("Enter Rahu's saara nathan: ")
@@ -63,18 +63,18 @@ def main():
 			ketu_natchatra_athipathi = 'ketu'
 			sani_natchatra_athipathi = 'guru'
 			chev_natchatra_athipathi = ' '
-			print('\nLets start filling the chart: ')
+			print("\nLets start filling the chart: ")
 			for house in house_list:
-				print('\nHow many planets does %s house have?	' %house)
+				print("\nHow many planets does %s house have?	" %house)
 				pnum = int(input())
 				
 				if pnum == 0:
-					planets_in_house.append('empty')
+					planets_in_house.append("empty")
 					
 				else:
-					print('\nList of planets: \n\n\tbudh, chan, guru, ketu, rahu, sani, chev, sukr, sury')
+					print("\nList of planets: \n\n\tbudh, chan, guru, ketu, rahu, sani, chev, sukr, sury")
 					for num in range(pnum):
-						planet_name = input('Enter planet:	')
+						planet_name = input("Enter planet:	")
 						planets_in_house.append(planet_name)
 				groom_chart.update({house:planets_in_house})
 				planets_in_house = []
@@ -121,100 +121,100 @@ def main():
 ##################################################################################################################################################################################
 
 			f.write("\n\n######################################### RESULTS #########################################")
-			f.write('\nDOSHAM LIST:')
+			f.write("\nDOSHAM LIST:")
 			if (lagna_check in [5,7]):
-				f.write('\n\tLagnam in ',lagna_check+1)
+				f.write("\n\tLagnam in"+ (lagna_check+1))
 			if (rasi_check in [5,7]):
-				f.write('\n\tRasi in ',rasi_check+1)
+				f.write("\n\tRasi in"+ (rasi_check+1))
 			if(groom_dasa == bride_dasa):
-				f.write('\n\tSame ',groom_dasa,' dasa running, check bukthi to proceed further')
+				f.write("\n\tSame"+groom_dasa+" dasa running, check bukthi to proceed further")
 			elif(groom_dasa in ['sury','guru']):
-				f.write('\n\tIncompatible dasa running for groom! ',groom_dasa,' dasa running')
+				f.write("\n\tIncompatible dasa running for groom!"+groom_dasa+" dasa running")
 			elif(groom_dasa_nathan in ['sani','sukr','rahu','ketu']):
-				f.write('\n\tIncompatible dasa running for groom! Dasa natchatra nathan is ', groom_dasa_nathan)
+				f.write("\n\tIncompatible dasa running for groom! Dasa natchatra nathan is: "+ groom_dasa_nathan)
 			else: 
 				pass
 			
 			if(sury_index in [6,7,11]):
-				f.write('\n\tSurya Dosham! Sury in ',sury_index+1,' house')
+				f.write("\n\tSurya Dosham! Sury in "+str(sury_index+1)+" house")
 			else:
 				pass
 
 			if(sani_index in [0,1,4,6,7,11]):
-				f.write('\n\tSani Dosham! Sani in ',sani_index+1,' house')
+				f.write("\n\tSani Dosham! Sani in "+str(sani_index+1)+" house")
 				if (sani_natchatra_athipathi in lagna_subar.get(groom_lagna)):
-					f.write('\t\tMitigated by lagna subar saaram')
+					f.write("\t\tMitigated by lagna subar saaram")
 				elif sani_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - sani_index) in [4,6,8]):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index) + 1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - sani_index) + 1)+" place")
 				elif sani_house[0] in ['makara', 'kumbha']:
-					f.write('\t\tAttained nivarthi by aatchi at ',sani_house[0])
+					f.write("\n\t\tAttained nivarthi by aatchi at"+sani_house[0])
 			else:
 				pass
 			
 			if(rahu_index in [0,1,4,6,7,11]):
 				if(rahu_index in [4,11]):
-					f.write('\n\tMild Rahu Dhosham! Rahu in ', rahu_index+1)
+					f.write("\n\tMild Rahu Dhosham! Rahu in"+ (rahu_index+1))
 					# dosha_match_count = dosha_match_count + 1
 					if (rahu_natchatra_athipathi in lagna_subar.get(groom_lagna)):
-						f.write('\t\tMitigated by lagna subar saaram')
+						f.write("\t\tMitigated by lagna subar saaram")
 					elif rahu_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - rahu_index) in [4,6,8]):
-						f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - rahu_index) + 1,' place')
+						f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - rahu_index) + 1)+" place")
 				else:	
-					f.write('\n\tRahu Dosham! Rahu in ',rahu_index+1)
+					f.write("\n\tRahu Dosham! Rahu in "+str(rahu_index+1))
 					if (rahu_natchatra_athipathi in lagna_subar.get(groom_lagna)):
-						f.write('\t\tMitigated by lagna subar saaram')
+						f.write("\t\tMitigated by lagna subar saaram")
 					elif rahu_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - rahu_index) in [4,6,8]):
-						f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - rahu_index) + 1,' place')
+						f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - rahu_index) + 1)+" place")
 			else:
 				pass
 
 			if(ketu_index in [0,1,4,6,7,11]):
 				if(ketu_index in [4,11]):
-					f.write('\n\tMild Ketu Dhosham! Ketu in ', ketu_index+1)
+					f.write("\n\tMild Ketu Dhosham! Ketu in"+ (ketu_index+1))
 					if (ketu_natchatra_athipathi in lagna_subar.get(groom_lagna)):
-						f.write('\t\tMitigated by lagna subar saaram')
+						f.write("\t\tMitigated by lagna subar saaram")
 					elif ketu_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - ketu_index) in [4,6,8]):
-						f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - ketu_index)+1,' place')
+						f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - ketu_index)+1)+" place")
 				else:	
-					f.write('\n\tKetu Dosham! Ketu in ',ketu_index+1)
+					f.write("\n\tKetu Dosham! Ketu in "+str(ketu_index+1))
 					if (ketu_natchatra_athipathi in lagna_subar.get(groom_lagna)):
-						f.write('\t\tMitigated by lagna subar saaram')
+						f.write("\t\tMitigated by lagna subar saaram")
 					elif ketu_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - ketu_index) in [4,6,8]):
-						f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - ketu_index)+1,' place')
+						f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - ketu_index)+1)+" place")
 			else:
 				pass
 
 			if(chev_index in [1,3,6,7,11]):
-				f.write('\n\tChev Dosham! Chev in ',chev_index+1,' place from lagnam')
+				f.write("\n\tChev Dosham! Chev in "+str(chev_index+1)+" place from lagnam")
 				if(groom_lagna_house[0] in ['mesha','karkadaga','simha','vrichiga','dhanusu','meena']):
-					f.write('\t\tAttained nivarthi by exceptional lagna property')
+					f.write("\n\t\tAttained nivarthi by exceptional lagna property")
 				elif chev_house[0] in ['mesha','vrichiga']:
-					f.write('\t\tAttained nivarthi by own house property')
+					f.write("\n\t\tAttained nivarthi by own house property")
 				elif chev_house[0] == 'makaram':
 					if not groom_lagna_house[0] in ['mithuna','kumba']:
-						f.write('\t\tAttained nivarthi by uchcham property')
+						f.write("\n\t\tAttained nivarthi by uchcham property")
 				elif chev_house[0] == 'karkadaga':
-					f.write('\t\tAttained nivarthi by neecham property')
+					f.write("\n\t\tAttained nivarthi by neecham property")
 				elif chev_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - chev_index) in [4,6,8]):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - chev_index)+1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - chev_index)+1)+" place")
 					# dosha_match_count = dosha_match_count + 1
 				elif (chev_natchatra_athipathi in lagna_subar.get(groom_lagna)):
-						f.write('\t\tAttained nivarthi by lagna subar saaram')
+						f.write("\n\t\tAttained nivarthi by lagna subar saaram")
 			elif(abs(groom_lagna_house.index(chan_house[0]) - chev_index) in [1,3,6,7,11]):	
-				f.write('\n\tChev Dosham! Chev in ',abs(groom_lagna_house.index(chan_house[0]) - chev_index) +1,' place from rasi')
+				f.write("\n\tChev Dosham! Chev in "+str(abs(groom_lagna_house.index(chan_house[0]) - chev_index) +1)+" place from rasi")
 				if(groom_lagna_house[0] in ['mesha','karkadaga','simha','vrichiga','dhanusu','meena']):
-					f.write('\t\tAttained nivarthi by exceptional lagna property')
+					f.write("\n\t\tAttained nivarthi by exceptional lagna property")
 				elif chev_house[0] in ['mesha','vrichiga']:
-					f.write('\t\tAttained nivarthi by own house property')
+					f.write("\n\t\tAttained nivarthi by own house property")
 				elif chev_house[0] == 'makaram':
 					if not groom_lagna_house[0] in ['mithuna','kumba']:
-						f.write('\t\tAttained nivarthi by uchcham property')
+						f.write("\n\t\tAttained nivarthi by uchcham property")
 				elif chev_house[0] == 'karkadaga':
-					f.write('\t\tAttained nivarthi by neecham property')
+					f.write("\n\t\tAttained nivarthi by neecham property")
 				elif chev_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - chev_index) in [4,6,8]):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - chev_index)+1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - chev_index)+1)+" place")
 				elif (chev_natchatra_athipathi in lagna_subar.get(groom_lagna)):
-						f.write('\t\tAttained nivarthi by lagna subar saaram')			
+						f.write("\n\t\tAttained nivarthi by lagna subar saaram")			
 			else:
 				pass
 	
@@ -226,36 +226,36 @@ def main():
 			neecham_house_check = [house  for (house, planet) in groom_chart.items() if planet_list[house_list.index(k_house[0])] in planet]
 			
 			if(groom_lagna_house.index(k_house[0]) in [2,4]):
-				f.write('\n\tKalathara Dosham! 7th house lord in ',groom_lagna_house.index(k_house[0])+1,' place')
+				f.write("\n\tKalathara Dosham! 7th house lord in "+str(groom_lagna_house.index(k_house[0])+1)+" place")
 				if(k_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0]))+1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0]))+1)+" place")
 			elif (groom_lagna_house.index(k_house1[0]) == 4):
-				f.write('\n\tKalathara Dosham! 8th house lord in 5th place')
+				f.write("\n\tKalathara Dosham! 8th house lord in 5th place")
 				if(k_house1[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0]))+1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0]))+1)+" place")
 			elif (groom_lagna_house.index(k_house2[0]) == 6):
-				f.write('\n\tKalathara Dosham! 10th house lord in 7th place')
+				f.write("\n\tKalathara Dosham! 10th house lord in 7th place")
 				if(k_house2[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0]))+1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0]))+1)+" place")
 			elif (planet_list[house_list.index(k_house[0])] in neecham_houses.get(neecham_house_check[0])):
-				f.write('\n\tKalathara Dosham! 7th house lord attaining neecham')
+				f.write("\n\tKalathara Dosham! 7th house lord attaining neecham")
 				if(k_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0]))+1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(k_house[0]))+1)+" place")
 			else:
 				pass
 			
 			if(((groom_lagna_house.index(chan_house[0])-sani_index) in [2,6,9])): 
-				f.write('\n\tPunarpu Dosham! Sani influence on chan')
+				f.write("\n\tPunarpu Dosham! Sani influence on chan")
 			elif(chan_house[0] == sani_house[0]): 
-				f.write('\n\tPunarpu Dosham! Sani and chan together')
+				f.write("\n\tPunarpu Dosham! Sani and chan together")
 			elif(chan_house[0] in ['makara','kumbha']):
-				f.write('\n\tPunarpu Dosham! chan in Makara or kumbha rasi')
+				f.write("\n\tPunarpu Dosham! chan in Makara or kumbha rasi")
 			elif(sani_house[0] == 'karkadaga'):
-				f.write('\n\tPunarpu Dosham! Sani in Karkadaga rasi')
+				f.write("\n\tPunarpu Dosham! Sani in Karkadaga rasi")
 			elif(sani_natchatram in natchatra_nathan.get('chan')):
-				f.write('\n\tPunarpu Dosham! Sani natchatram in chan natchatra nathan list')
+				f.write("\n\tPunarpu Dosham! Sani natchatram in chan natchatra nathan list")
 			elif(natchatram_response in natchatra_nathan.get('sani')):
-				f.write('\n\tPunarpu Dosham! chan natchatram in sani natchatra nathan list')
+				f.write("\n\tPunarpu Dosham! chan natchatram in sani natchatra nathan list")
 			else:
 				pass
 			
@@ -265,221 +265,223 @@ def main():
 			p_house_8 = [house  for (house, planet) in groom_chart.items() if groom_planet_house[7] in planet]
 			p_house_12 = [house  for (house, planet) in groom_chart.items() if groom_planet_house[11] in planet]
 			if groom_lagna_house.index(p_house_5[0]) == 6:
-				f.write('\n\tPutra Dosham! 5th house lord in 7th place')
+				f.write("\n\tPutra Dosham! 5th house lord in 7th place")
 			elif groom_lagna_house.index(p_house_7[0]) == 4:
-				f.write('\n\tPutra Dosham! 7th house lord in 5th place')
+				f.write("\n\tPutra Dosham! 7th house lord in 5th place")
 			elif p_house_5 == groom_lagna_house[7] and p_house_7 == groom_lagna_house[4]:
-				f.write('\n\tPutra Dosham! 5th house lord in 8th house and 7th house lord in 5th house')
+				f.write("\n\tPutra Dosham! 5th house lord in 8th house and 7th house lord in 5th house")
 			elif p_house_5 == groom_lagna_house[7] and p_house_8 == groom_lagna_house[4]:
-				f.write('\n\tPutra Dosham! 5th house lord in 8th house and 8th house lord in 5th house')
+				f.write("\n\tPutra Dosham! 5th house lord in 8th house and 8th house lord in 5th house")
 			elif p_house_5 == groom_lagna_house[11] and p_house_12 == groom_lagna_house[4]:
-				f.write('\n\tPutra Dosham! 5th house lord in 12th house and 12th house lord in 5th house')
+				f.write("\n\tPutra Dosham! 5th house lord in 12th house and 12th house lord in 5th house")
 			elif chev_index == 0:
-				f.write('\n\tPutra Dosham! chev in lagnam')
+				f.write("\n\tPutra Dosham! chev in lagnam")
 			elif sani_index == 6:	  
-				f.write('\n\tPutra Dosham! Sani in 7th house')
+				f.write("\n\tPutra Dosham! Sani in 7th house")
 			elif sury_index == 11:
-				f.write('\n\tPutra Dosham! sury in 12th house')
+				f.write("\n\tPutra Dosham! sury in 12th house")
 			elif (abs(groom_lagna_house.index(chan_house[0]) - sani_index) in [2,6,9]):
-				f.write('\n\tPutra Dosham! Sani parvai on chan')
+				f.write("\n\tPutra Dosham! Sani parvai on chan")
 			elif ((0 #This is Lagna index value
 					- sani_index) in [2,6,9]):
-				f.write('\n\tPutra Dosham! Sani parvai on lagnam')
+				f.write("\n\tPutra Dosham! Sani parvai on lagnam")
 			elif ((groom_lagna_house.index(p_house_5[0])-sani_index) in [2,6,9]):
-				f.write('\n\tPutra Dosham! Sani parvai on 5th house')
+				f.write("\n\tPutra Dosham! Sani parvai on 5th house")
 			elif (sani_index in [0,4,7,11]): 
-				f.write('\n\tPutra Dosham! Sani in ', sani_index+1,' house')
+				f.write("\n\tPutra Dosham! Sani in "+str(sani_index+1)+" house")
 			elif (chev_index in [0,4,7,11]):
-				f.write('\n\tPutra Dosham! Chev in ',chev_index+1,' house')
+				f.write("\n\tPutra Dosham! Chev in "+str(chev_index+1)+" house")
 			elif (p_house_5 == chev_house[0] and chev_index == 4 and ((groom_lagna_house.index(p_house_5)-sani_index) in [2,6,9])):
-				f.write('\n\tPutra Dosham! 5th house lord with chev, both(5th house lord and chev) currently in 5th place and have sani paarvai')
+				f.write("\n\tPutra Dosham! 5th house lord with chev, both(5th house lord and chev) currently in 5th place and have sani paarvai")
 			else:
 				pass
 ##################################################################################################################################################################################
-			f.write('\nPLANETORY CONJUNCTION:\n')
+			f.write("\nPLANETORY CONJUNCTION:\n")
 
 			if(chan_house[0] == ketu_house[0]):
-				f.write('\n\tchan-ketu together!')
+				f.write("\n\tchan-ketu together!")
 				if(chan_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0]))+1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0]))+1)+" place")
 			else:
 				pass
 			
 			if(chan_house[0] == budh_house[0]):
-				f.write('\n\tchan-budh together!')
+				f.write("\n\tchan-budh together!")
 				if(chan_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0]))+1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0]))+1)+" place")
 			else:
 				pass
 			
 			if(sukr_house[0] == ketu_house[0]):
-				f.write('\n\tsukr-ketu together!')
+				f.write("\n\tsukr-ketu together!")
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1)+" place")
 			else:
 				pass
 			
 			if(chev_house[0] == sani_house[0]):
-				f.write('\n\tchev-sani together!')
+				f.write("\n\tchev-sani together!")
 				if(chev_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - chev_index) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - chev_index)+1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - chev_index)+1)+" place")
 			else:
 				pass
 
 			if(sukr_house[0] == chan_house[0]):
-				f.write('\n\tsukr-chan together!')
+				f.write("\n\tsukr-chan together!")
 				if(chan_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0]))+1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0]))+1)+" place")
 			else:
 				pass
 
 			if(chan_house[0] == sani_house[0]):
-				f.write('\n\tchan-sani together!')
+				f.write("\n\tchan-sani together!")
 				if(chan_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0]))+1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(chan_house[0]))+1)+" place")
 			else:
 				pass
 			
 			if(sukr_house[0] == chev_house[0]):
-				f.write('\n\tchev-sukr together!')
+				f.write("\n\tchev-sukr together!")
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1)+" place")
 			else:
 				pass
 
 			if(sukr_house[0] == sury_house[0]):
-				f.write('\n\tsury-sukr together!')
+				f.write("\n\tsury-sukr together!")
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1)+" place")
 			else:
 				pass
 
 			if(seventh_house[0] == sury_house[0]):
-				f.write('\n\t7th house lord with sury')
+				f.write("\n\t7th house lord with sury")
 				if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1,' place')				
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1)+" place")				
 			elif(seventh_house[0] == sani_house[0]):
-				f.write('\n\t7th house lord with sani')
+				f.write("\n\t7th house lord with sani")
 				if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1,' place')				
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1)+" place")				
 			if(seventh_house[0] == rahu_house[0]):
-				f.write('\n\t7th house lord with rahu')
+				f.write("\n\t7th house lord with rahu")
 				if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1,' place')				
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1)+" place")				
 			if(seventh_house[0] == ketu_house[0]):
-				f.write('\n\t7th house lord with ketu')
+				f.write("\n\t7th house lord with ketu")
 				if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1,' place')				
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1)+" place")				
 			if(seventh_house[0] == chev_house[0]):
-				f.write('\n\t7th house lord with chev')
+				f.write("\n\t7th house lord with chev")
 				if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1,' place')				
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1)+" place")				
 			else:
 				pass
 
 			if(sukr_house[0] == sury_house[0]):
-				f.write('\n\tsukr with sury')
+				f.write("\n\tsukr with sury")
 				# dosha_match_count = dosha_match_count + 1
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index) + 1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - sani_index) +1)+" place")
 			elif(sukr_house[0] == rahu_house[0]):
-				f.write('\n\tsukr with rahu')
+				f.write("\n\tsukr with rahu")
 				# dosha_match_count = dosha_match_count + 1
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index) + 1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - sani_index) +1)+" place")
 			elif(sukr_house[0] == ketu_house[0]):
-				f.write('\n\tsukr with ketu')
+				f.write("\n\tsukr with ketu")
 				# dosha_match_count = dosha_match_count + 1
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index) + 1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - sani_index) +1)+" place")
 			elif(sukr_house[0] == chev_house[0]):
-				f.write('\n\tsukr with chev')
+				f.write("\n\tsukr with chev")
 				# dosha_match_count = dosha_match_count + 1
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index) + 1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - sani_index) +1)+" place")
 			elif(sukr_house[0] == sani_house[0]):
-				f.write('\n\tsukr with sani')
+				f.write("\n\tsukr with sani")
 				# dosha_match_count = dosha_match_count + 1
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - sani_index) + 1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - sani_index) +1)+" place")
 			else:
 				pass
 
 			if(sixth_house[0] == seventh_house[0]): 
-				f.write('\n\t6 and 7th house lords together') 
+				f.write("\n\t6 and 7th house lords together") 
 				if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1,' place')				
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1)+" place")				
 			else:
 				pass
 			if (seventh_house[0] == eighth_house[0]): 
-				f.write('\n\t7 and 8th house lords together') 
+				f.write("\n\t7 and 8th house lords together") 
 				if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1,' place')				
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1)+" place")				
 			else:
 				pass
 			if (seventh_house[0] == twelfth_house[0]):
-				f.write('\n\t7 and 12th house lords together')
+				f.write("\n\t7 and 12th house lords together")
 				if(seventh_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1,' place')				
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(seventh_house[0]))+1)+" place")				
 			else:
 				pass
 			if(second_house[0] == sixth_house[0]): 
-				f.write('\n\t2 and 6th house lords together')
+				f.write("\n\t2 and 6th house lords together")
 				if(second_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0]))+1,' place')	
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0]))+1)+" place")	
 			else:
 				pass
 			if(second_house[0] == eighth_house[0]): 
-				f.write('\n\t2 and 8th house lords together')
+				f.write("\n\t2 and 8th house lords together")
 				if(second_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0]))+1,' place')	
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0]))+1)+" place")	
 			else:
 				pass
 			if(second_house[0] == twelfth_house[0]):
-				f.write('\n\t2 and 12th house lords together')
+				f.write("\n\t2 and 12th house lords together")
 				if(second_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0]))+1,' place')				
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(second_house[0]))+1)+" place")				
 			else:
 				pass
 			if(sukr_house[0] == sixth_house[0]):
-				f.write('\n\tsukr and 6th house lords together') 
+				f.write("\n\tsukr and 6th house lords together") 
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1)+" place")
 			else:
 				pass
 			if(sukr_house[0] == eighth_house[0]): 
-				f.write('\n\tsukr and 8th house lords together') 
+				f.write("\n\tsukr and 8th house lords together") 
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1)+" place")
 			else:
 				pass
 			if(sukr_house[0] == twelfth_house[0]):
-				f.write('\n\tsukr and 12th house lords together')
+				f.write("\n\tsukr and 12th house lords together")
 				if(sukr_house[0] == guru_house[0] or (abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0])) in [4,6,8])):
-					f.write('\t\tAttained nivarthi by guru influence at: ',abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1,' place')
+					f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(groom_lagna_house.index(guru_house[0]) - groom_lagna_house.index(sukr_house[0]))+1)+" place")
 			else:
 				pass
 ##################################################################################################################################################################################
 
 			# if(dosha_match_count == 3):
-			# 	f.write('DOSHAM COMBINATION MATCHING WITH BRIDE! SUITABLE MATCH')
+			# 	f.write("DOSHAM COMBINATION MATCHING WITH BRIDE! SUITABLE MATCH")
 			# else:
-			# 	f.write('DOSHAM COMBINATION NOT MATCHING WITH BRIDE!')
+			# 	f.write("DOSHAM COMBINATION NOT MATCHING WITH BRIDE!")
 			
-			f.write('\n\n###################################### END OF RESULTS ######################################')
+			f.write("\n\n###################################### END OF RESULTS ######################################")
 				
 		else: 
-			f.write('\n\tSorry, no natchatra porutham')
+			f.write("\n\tSorry, no natchatra porutham")
 		f.close()
-		# exit = input('\n\nPress any button to exit')			
-	except (ValueError):
-		print('\n\tIncorrect Value Entered!')
-	except (RuntimeError):
-		print('\n\tRuntimeError')
-	except (TypeError):
-		print('\n\tTypeError')
-	except (NameError):
-		print('\n\tNameError')
+		# exit = input("\n\nPress any button to exit")
+	except Exception as e:
+		print("Exception is: ", e)			
+	# except (ValueError):
+	# 	print("\n\tIncorrect Value Entered!")
+	# except (RuntimeError):
+	# 	print("\n\tRuntimeError")
+	# except (TypeError):
+	# 	print("\n\tTypeError")
+	# except (NameError):
+	# 	print("\n\tNameError")
 	
 if __name__== "__main__":
 	main()

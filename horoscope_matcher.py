@@ -127,9 +127,9 @@ def main():
 			if (rasi_check in [5,7]):
 				f.write("\n\tRasi in"+ (rasi_check+1))
 			if(groom_dasa == bride_dasa):
-				f.write("\n\tSame"+groom_dasa+" dasa running, check bukthi to proceed further")
+				f.write("\n\tSame "+groom_dasa+" dasa running, check bukthi to proceed further")
 			elif(groom_dasa in ['sury','guru']):
-				f.write("\n\tIncompatible dasa running for groom!"+groom_dasa+" dasa running")
+				f.write("\n\tIncompatible dasa running for groom! "+groom_dasa+" dasa running")
 			elif(groom_dasa_nathan in ['sani','sukr','rahu','ketu']):
 				f.write("\n\tIncompatible dasa running for groom! Dasa natchatra nathan is: "+ groom_dasa_nathan)
 			else: 
@@ -153,7 +153,7 @@ def main():
 			
 			if(rahu_index in [0,1,4,6,7,11]):
 				if(rahu_index in [4,11]):
-					f.write("\n\tMild Rahu Dhosham! Rahu in"+ (rahu_index+1))
+					f.write("\n\tMild Rahu Dhosham! Rahu in "+ str(rahu_index+1))
 					# dosha_match_count = dosha_match_count + 1
 					if (rahu_natchatra_athipathi in lagna_subar.get(groom_lagna)):
 						f.write("\t\tMitigated by lagna subar saaram")

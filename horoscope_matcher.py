@@ -60,9 +60,9 @@ def main():
 			ketu_natchatra_athipathi = input("Enter Ketu's saara nathan: ")
 			sani_natchatra_athipathi = input("Enter Sani's saara nathan: ")
 			# rahu_natchatra_athipathi = 'rahu'
-			ketu_natchatra_athipathi = 'ketu'
-			sani_natchatra_athipathi = 'guru'
-			chev_natchatra_athipathi = ' '
+			# ketu_natchatra_athipathi = 'ketu'
+			# sani_natchatra_athipathi = 'guru'
+			# chev_natchatra_athipathi = ' '
 			print("\nLets start filling the chart: ")
 			for house in house_list:
 				print("\nHow many planets does %s house have?	" %house)

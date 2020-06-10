@@ -38,6 +38,7 @@ class chartInit():
         lagna_check = ''
         rasi_check = ''
         groom_dasa = ''
+        groom_bukthi = ''
         groom_dasa_nathan = ''
         sani_natchatram = ''
         chev_natchatra_athipathi = ''
@@ -53,24 +54,24 @@ class chartInit():
         budh_house = []
         sukr_house = []
         guru_house = []
-        second_house = []
-        sixth_house = []
-        seventh_house = []
-        eighth_house = []
-        twelfth_house = []
+        house_2 = []
+        house_6 = []
+        house_7 = []
+        house_8 = []
+        house_12 = []
         chev_index = []
         sani_index = []
         sury_index = []
         rahu_index = []
         ketu_index = []
-        k_house = []
-        k_house1 = []
-        k_house2 = []
+        house_7 = []
+        house_8 = []
+        house_10 = []
         neecham_house_check = []
-        p_house_5 = []
-        p_house_7 = []
-        p_house_8 = []
-        p_house_12 = []
+        house_5 = []
+        house_7 = []
+        house_8 = []
+        house_12 = []
 
     except Exception as e:
         print("Exception is: ", e)

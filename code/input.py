@@ -22,6 +22,7 @@ def getInput():
             # Start filling the rasi chart
             print("\nList of planets: \n\n\tbudh, chan, guru, ketu, rahu, sani, chev, sukr, sury")
             ini.groom_dasa = input("\nEnter groom's currently running dasa: ")
+            ini.groom_bukthi = input("\nEnter groom's currently running bukthi: ")
             ini.groom_dasa_nathan = input("\nEnter groom's dasa natchatra nathan: ")
             print("\nList of natchatrams:\n\n\taayilyam, anusham, aswini, avittam, barani, chithirai,  hastham, kettai, krithigai,\n\t magam, moolam, mrigasirisham, pooradam, pooram, poorattadhi, poosam,  punarpoosam, revathi,\n\t rohini, sadhayam, swathi, tiruvonam, tiruvadurai, uthram,  uthradam, uthrattadhi, visaagam")
             ini.sani_natchatram = input("\nEnter sani's natchatram from chart: ")

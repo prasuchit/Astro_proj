@@ -1,7 +1,7 @@
 import chart
 import doshams as d
 import plan_conj as pc
-# import specialRules as sr
+import specialRules as sr
 
 def calcResults():
     try:
@@ -28,6 +28,8 @@ def calcResults():
         d.putraDosham(params)
 
         pc.planetoryConj(params)
+
+        # sr.badCombinations(params)
 
         params.f.write("\n\n###################################### END OF RESULTS ######################################")
         params.f.close()

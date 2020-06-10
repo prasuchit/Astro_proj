@@ -58,26 +58,26 @@ def planetoryConj(params):
     else:
         pass
 
-    if(params.seventh_house[0] == params.sury_house[0]):
+    if(params.house_7[0] == params.sury_house[0]):
         params.f.write("\n\t7th house lord with sury")
-        if(params.seventh_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.seventh_house[0])) in [4,6,8])):
-            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.seventh_house[0]))+1)+" place")				
-    elif(params.seventh_house[0] == params.sani_house[0]):
+        if(params.house_7[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0])) in [4,6,8])):
+            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0]))+1)+" place")				
+    elif(params.house_7[0] == params.sani_house[0]):
         params.f.write("\n\t7th house lord with sani")
-        if(params.seventh_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.seventh_house[0])) in [4,6,8])):
-            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.seventh_house[0]))+1)+" place")				
-    if(params.seventh_house[0] == params.rahu_house[0]):
+        if(params.house_7[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0])) in [4,6,8])):
+            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0]))+1)+" place")				
+    if(params.house_7[0] == params.rahu_house[0]):
         params.f.write("\n\t7th house lord with rahu")
-        if(params.seventh_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.seventh_house[0])) in [4,6,8])):
-            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.seventh_house[0]))+1)+" place")				
-    if(params.seventh_house[0] == params.ketu_house[0]):
+        if(params.house_7[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0])) in [4,6,8])):
+            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0]))+1)+" place")				
+    if(params.house_7[0] == params.ketu_house[0]):
         params.f.write("\n\t7th house lord with ketu")
-        if(params.seventh_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.seventh_house[0])) in [4,6,8])):
-            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.seventh_house[0]))+1)+" place")				
-    if(params.seventh_house[0] == params.chev_house[0]):
+        if(params.house_7[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0])) in [4,6,8])):
+            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0]))+1)+" place")				
+    if(params.house_7[0] == params.chev_house[0]):
         params.f.write("\n\t7th house lord with chev")
-        if(params.seventh_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.seventh_house[0])) in [4,6,8])):
-            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.seventh_house[0]))+1)+" place")				
+        if(params.house_7[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0])) in [4,6,8])):
+            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0]))+1)+" place")				
     else:
         pass
 
@@ -109,55 +109,55 @@ def planetoryConj(params):
     else:
         pass
 
-    if(params.sixth_house[0] == params.seventh_house[0]): 
+    if(params.house_6[0] == params.house_7[0]): 
         params.f.write("\n\t6 and 7th house lords together") 
-        if(params.seventh_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.seventh_house[0])) in [4,6,8])):
-            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.seventh_house[0]))+1)+" place")				
+        if(params.house_7[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0])) in [4,6,8])):
+            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0]))+1)+" place")				
     else:
         pass
-    if (params.seventh_house[0] == params.eighth_house[0]): 
+    if (params.house_7[0] == params.house_8[0]): 
         params.f.write("\n\t7 and 8th house lords together") 
-        if(params.seventh_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.seventh_house[0])) in [4,6,8])):
-            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.seventh_house[0]))+1)+" place")				
+        if(params.house_7[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0])) in [4,6,8])):
+            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0]))+1)+" place")				
     else:
         pass
-    if (params.seventh_house[0] == params.twelfth_house[0]):
+    if (params.house_7[0] == params.house_12[0]):
         params.f.write("\n\t7 and 12th house lords together")
-        if(params.seventh_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.seventh_house[0])) in [4,6,8])):
-            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.seventh_house[0]))+1)+" place")				
+        if(params.house_7[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0])) in [4,6,8])):
+            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0]))+1)+" place")				
     else:
         pass
-    if(params.second_house[0] == params.sixth_house[0]): 
+    if(params.house_2[0] == params.house_6[0]): 
         params.f.write("\n\t2 and 6th house lords together")
-        if(params.second_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.second_house[0])) in [4,6,8])):
-            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.second_house[0]))+1)+" place")	
+        if(params.house_2[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_2[0])) in [4,6,8])):
+            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_2[0]))+1)+" place")	
     else:
         pass
-    if(params.second_house[0] == params.eighth_house[0]): 
+    if(params.house_2[0] == params.house_8[0]): 
         params.f.write("\n\t2 and 8th house lords together")
-        if(params.second_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.second_house[0])) in [4,6,8])):
-            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.second_house[0]))+1)+" place")	
+        if(params.house_2[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_2[0])) in [4,6,8])):
+            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_2[0]))+1)+" place")	
     else:
         pass
-    if(params.second_house[0] == params.twelfth_house[0]):
+    if(params.house_2[0] == params.house_12[0]):
         params.f.write("\n\t2 and 12th house lords together")
-        if(params.second_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.second_house[0])) in [4,6,8])):
-            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.second_house[0]))+1)+" place")				
+        if(params.house_2[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_2[0])) in [4,6,8])):
+            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_2[0]))+1)+" place")				
     else:
         pass
-    if(params.sukr_house[0] == params.sixth_house[0]):
+    if(params.sukr_house[0] == params.house_6[0]):
         params.f.write("\n\tsukr and 6th house lords together") 
         if(params.sukr_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.sukr_house[0])) in [4,6,8])):
             params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.sukr_house[0]))+1)+" place")
     else:
         pass
-    if(params.sukr_house[0] == params.eighth_house[0]): 
+    if(params.sukr_house[0] == params.house_8[0]): 
         params.f.write("\n\tsukr and 8th house lords together") 
         if(params.sukr_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.sukr_house[0])) in [4,6,8])):
             params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.sukr_house[0]))+1)+" place")
     else:
         pass
-    if(params.sukr_house[0] == params.twelfth_house[0]):
+    if(params.sukr_house[0] == params.house_12[0]):
         params.f.write("\n\tsukr and 12th house lords together")
         if(params.sukr_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.sukr_house[0])) in [4,6,8])):
             params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.sukr_house[0]))+1)+" place")

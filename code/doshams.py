@@ -108,22 +108,22 @@ def chevDosham(params):
 
 def kalatharaDosham(params):
 
-    if(params.groom_lagna_house.index(params.k_house[0]) in [2,4]):
-        params.f.write("\n\tKalathara Dosham! 7th house lord in "+str(params.groom_lagna_house.index(params.k_house[0])+1)+" place")
-        if(params.k_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.k_house[0])) in [4,6,8])):
-            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.k_house[0]))+1)+" place")
-    elif (params.groom_lagna_house.index(params.k_house1[0]) == 4):
+    if(params.groom_lagna_house.index(params.house_7[0]) in [2,4]):
+        params.f.write("\n\tKalathara Dosham! 7th house lord in "+str(params.groom_lagna_house.index(params.house_7[0])+1)+" place")
+        if(params.house_7[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0])) in [4,6,8])):
+            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0]))+1)+" place")
+    elif (params.groom_lagna_house.index(params.house_8[0]) == 4):
         params.f.write("\n\tKalathara Dosham! 8th house lord in 5th place")
-        if(params.k_house1[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.k_house[0])) in [4,6,8])):
-            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.k_house[0]))+1)+" place")
-    elif (params.groom_lagna_house.index(params.k_house2[0]) == 6):
+        if(params.house_8[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0])) in [4,6,8])):
+            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0]))+1)+" place")
+    elif (params.groom_lagna_house.index(params.house_10[0]) == 6):
         params.f.write("\n\tKalathara Dosham! 10th house lord in 7th place")
-        if(params.k_house2[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.k_house[0])) in [4,6,8])):
-            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.k_house[0]))+1)+" place")
-    elif (params.planet_list[params.house_list.index(params.k_house[0])] in params.neecham_houses.get(params.neecham_house_check[0])):
+        if(params.house_10[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0])) in [4,6,8])):
+            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0]))+1)+" place")
+    elif (params.planet_list[params.house_list.index(params.house_7[0])] in params.neecham_houses.get(params.neecham_house_check[0])):
         params.f.write("\n\tKalathara Dosham! 7th house lord attaining neecham")
-        if(params.k_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.k_house[0])) in [4,6,8])):
-            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.k_house[0]))+1)+" place")
+        if(params.house_7[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0])) in [4,6,8])):
+            params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.house_7[0]))+1)+" place")
     else:
         pass
 
@@ -146,15 +146,15 @@ def punarpuDosham(params):
 
 def putraDosham(params):
 
-    if params.groom_lagna_house.index(params.p_house_5[0]) == 6:
+    if params.groom_lagna_house.index(params.house_5[0]) == 6:
         params.f.write("\n\tPutra Dosham! 5th house lord in 7th place")
-    elif params.groom_lagna_house.index(params.p_house_7[0]) == 4:
+    elif params.groom_lagna_house.index(params.house_7[0]) == 4:
         params.f.write("\n\tPutra Dosham! 7th house lord in 5th place")
-    elif params.p_house_5 == params.groom_lagna_house[7] and params.p_house_7 == params.groom_lagna_house[4]:
+    elif params.house_5 == params.groom_lagna_house[7] and params.house_7 == params.groom_lagna_house[4]:
         params.f.write("\n\tPutra Dosham! 5th house lord in 8th house and 7th house lord in 5th house")
-    elif params.p_house_5 == params.groom_lagna_house[7] and params.p_house_8 == params.groom_lagna_house[4]:
+    elif params.house_5 == params.groom_lagna_house[7] and params.house_8 == params.groom_lagna_house[4]:
         params.f.write("\n\tPutra Dosham! 5th house lord in 8th house and 8th house lord in 5th house")
-    elif params.p_house_5 == params.groom_lagna_house[11] and params.p_house_12 == params.groom_lagna_house[4]:
+    elif params.house_5 == params.groom_lagna_house[11] and params.house_12 == params.groom_lagna_house[4]:
         params.f.write("\n\tPutra Dosham! 5th house lord in 12th house and 12th house lord in 5th house")
     elif params.chev_index == 0:
         params.f.write("\n\tPutra Dosham! chev in lagnam")
@@ -167,13 +167,13 @@ def putraDosham(params):
     elif ((0 #This is Lagna index value
             - params.sani_index) in [2,6,9]):
         params.f.write("\n\tPutra Dosham! Sani parvai on lagnam")
-    elif ((params.groom_lagna_house.index(params.p_house_5[0])-params.sani_index) in [2,6,9]):
+    elif ((params.groom_lagna_house.index(params.house_5[0])-params.sani_index) in [2,6,9]):
         params.f.write("\n\tPutra Dosham! Sani parvai on 5th house")
     elif (params.sani_index in [0,4,7,11]): 
         params.f.write("\n\tPutra Dosham! Sani in "+str(params.sani_index+1)+" house")
     elif (params.chev_index in [0,4,7,11]):
         params.f.write("\n\tPutra Dosham! Chev in "+str(params.chev_index+1)+" house")
-    elif (params.p_house_5 == params.chev_house[0] and params.chev_index == 4 and ((params.groom_lagna_house.index(params.p_house_5)-params.sani_index) in [2,6,9])):
+    elif (params.house_5 == params.chev_house[0] and params.chev_index == 4 and ((params.groom_lagna_house.index(params.house_5)-params.sani_index) in [2,6,9])):
         params.f.write("\n\tPutra Dosham! 5th house lord with chev, both(5th house lord and chev) currently in 5th place and have sani paarvai")
     else:
         pass

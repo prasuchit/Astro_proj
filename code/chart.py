@@ -23,6 +23,7 @@ def chartParams():
         inputs.budh_house = [house  for (house, planet) in inputs.groom_chart.items() if 'budh' in planet]
         inputs.sukr_house = [house  for (house, planet) in inputs.groom_chart.items() if 'sukr' in planet]
         inputs.guru_house = [house  for (house, planet) in inputs.groom_chart.items() if 'guru' in planet]
+        # Following variables say where that house lord is currently at.
         inputs.house_2 = [house  for (house, planet) in inputs.groom_chart.items() if inputs.groom_planet_house[1] in planet]
         inputs.house_5 = [house  for (house, planet) in inputs.groom_chart.items() if inputs.groom_planet_house[4] in planet]
         inputs.house_6 = [house  for (house, planet) in inputs.groom_chart.items() if inputs.groom_planet_house[5] in planet]
@@ -38,10 +39,11 @@ def chartParams():
         inputs.rahu_index = inputs.groom_lagna_house.index(inputs.rahu_house[0])
         inputs.ketu_index = inputs.groom_lagna_house.index(inputs.ketu_house[0])        
     
-        # Getting the house where the 7th house lord currently resides in the chart
-        inputs.neecham_house_check = [house  for (house, planet) in inputs.groom_chart.items() if inputs.planet_list[inputs.house_list.index(inputs.house_7[0])] in planet]
-
+        # Getting the house where the 7th and 10th house lord currently resides in the chart
+        inputs.neecham_house_check_7 = inputs.house_7
+        inputs.neecham_house_check_10 = inputs.house_10
+        # print("Hey!")
     except Exception as e:
-	    print("Exception is: ", e)
+	    print("Exception in chart.py is: ", e)
         
     return inputs

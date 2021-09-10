@@ -1,5 +1,7 @@
 import init
+from bride import rasi_chart as rc
 import os
+import sys
 def getInput():
     try:
         ini = init.chartInit()
@@ -9,15 +11,18 @@ def getInput():
         print("Compatible natchatram list: \n\t")
         print(", ".join(ini.natchatra_list))
         ini.natchatram_response = input("\nEnter Groom natchatra:	")
-        if ini.natchatram_response in ini.natchatra_list:
+        if ini.natchatram_response not in ini.natchatra_list:
+            ini.f.write("\n\tSorry, no natchatra porutham")
+            sys.exit()
+        else: 
             print("\nList of houses: \n\t")
             print(", ".join(ini.house_list))
             ini.groom_lagna = input("\nEnter groom's lagna:	")
             ini.groom_chan = input("\nEnter groom's rasi:	")
             
             # Checking if lagnam and rasi of groom and bride are not in 6th or 8th positions from one another
-            ini.lagna_check = (ini.house_list.index(ini.bride_lagna) - ini.house_list.index(ini.groom_lagna))
-            ini.rasi_check = (ini.house_list.index(ini.bride_chan) - ini.house_list.index(ini.groom_chan))
+            ini.lagna_check = (ini.house_list.index(rc.lagna) - ini.house_list.index(ini.groom_lagna))
+            ini.rasi_check = (ini.house_list.index(rc.chan) - ini.house_list.index(ini.groom_chan))
             
             # Start filling the rasi chart
             print("\nList of planets: \n\n\tbudh, chan, guru, ketu, rahu, sani, chev, sukr, sury")
@@ -46,10 +51,7 @@ def getInput():
                         planets_in_house.append(planet_name)
                 ini.groom_chart.update({house:planets_in_house})
                 planets_in_house = []
-
-        else: 
-            ini.f.write("\n\tSorry, no natchatra porutham")
             
     except Exception as e:
-        print("Exception is: ", e)
+        print("Exception in input.py is: ", e)
     return ini

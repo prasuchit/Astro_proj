@@ -6,13 +6,6 @@ class chartInit():
         if not os.path.exists(outpath):
             os.makedirs(outpath)
         
-        # Feeding in bride specific details
-        bride_lagna = 'kanya'
-        bride_chan = 'meena'
-        bride_dasa = 'sukr'
-        bride_bukthi = 'chan'
-        dosha_match_count = 0
-
         # List of houses in clockwise order
         house_list = ['mesha','rishaba','mithuna','karkadaga','simha','kanya','thula','vrichiga','dhanusu','makara','kumbha','meena']
         # List of planets in clockwise order
@@ -23,10 +16,12 @@ class chartInit():
         lagna_subar = {'mesha':['chev','sury','guru'],'rishaba':['sukr','budh','sani'],'mithuna':['budh','sukr','sani'],'karkadaga':['chan','chev','guru'],'simha':['sury','chev','guru'],'kanya':['budh','sukr','sani'],'thula':['sukr','sani','budh'],'vrichiga':['chev','guru','sury'],'dhanusu':['guru','chev','sury'],'makara':['sani','sukr','budh'],'kumbha':['sani','budh','sukr'],'meena':['guru','chan','chev']}
         # Dictionary mapping of natchatra nathan natchatrams for each planet
         natchatra_nathan = {'ketu':['aswini','magam','moolam'],'sukr':['barani','pooram','pooradam'],'sury':['krithigai','uthram','uthradam'],'chan':['rohini','hastham','tiruvonam'],'chev':['mrigasirisham', 'chithirai','avittam'],'rahu':['tiruvadurai','swathi','sadhayam'],'guru':['punarpoosam','visaagam','poorattadhi'],'sani':['poosam','anusham','uthrattadhi'],'budh':['aayilyam','revathi','kettai']}
-        #Dictionary maping of neecham planets for each house
+        # Dictionary maping of neecham planets for each house
         neecham_houses = {'mesha':['sani'],'rishaba':['rahu','ketu'],'mithuna':['empty'],'karkadaga':['chev'],'simha':['empty'],'kanya':['sukr'],'thula':['sury'],'vrichiga':['chan'],'dhanusu':['empty'], 'makara':['guru'],'kumbha':['empty'],'meena':['budh']}
-        # Ucham houses are diametrically opposite 7th houses
-
+        # Uchcham houses are diametrically opposite 7th houses
+        uchcham_houses = {'mesha':['sury'],'rishaba':['chan'],'mithuna':['empty'],'karkadaga':['guru'],'simha':['empty'],'kanya':['budh'],'thula':['sani'],'vrichiga':['rahu','ketu'],'dhanusu':['empty'], 'makara':['chev'],'kumbha':['empty'],'meena':['sukr']}
+        # Dasa and Bukthi order
+        dasa_order = ['ketu', 'sukr', 'sury', 'chan', 'chev', 'rahu', 'guru', 'sani', 'budh']
         groom_chart = {}
         groom_lagna_house = []
         groom_planet_house = []
@@ -67,12 +62,13 @@ class chartInit():
         house_7 = []
         house_8 = []
         house_10 = []
-        neecham_house_check = []
+        neecham_house_check_7 = []
+        neecham_house_check_10 = []
         house_5 = []
         house_7 = []
         house_8 = []
         house_12 = []
 
     except Exception as e:
-        print("Exception is: ", e)
+        print("Exception in init.py is: ", e)
 ##################################################################################################################################################################################

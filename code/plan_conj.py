@@ -83,27 +83,22 @@ def planetoryConj(params):
 
     if(params.sukr_house[0] == params.sury_house[0]):
         params.f.write("\n\tsukr with sury")
-        # dosha_match_count = dosha_match_count + 1
         if(params.sukr_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.sukr_house[0])) in [4,6,8])):
             params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.sani_index) +1)+" place")
     elif(params.sukr_house[0] == params.rahu_house[0]):
         params.f.write("\n\tsukr with rahu")
-        # dosha_match_count = dosha_match_count + 1
         if(params.sukr_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.sukr_house[0])) in [4,6,8])):
             params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.sani_index) +1)+" place")
     elif(params.sukr_house[0] == params.ketu_house[0]):
         params.f.write("\n\tsukr with ketu")
-        # dosha_match_count = dosha_match_count + 1
         if(params.sukr_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.sukr_house[0])) in [4,6,8])):
             params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.sani_index) +1)+" place")
     elif(params.sukr_house[0] == params.chev_house[0]):
         params.f.write("\n\tsukr with chev")
-        # dosha_match_count = dosha_match_count + 1
         if(params.sukr_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.sukr_house[0])) in [4,6,8])):
             params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.sani_index) +1)+" place")
     elif(params.sukr_house[0] == params.sani_house[0]):
         params.f.write("\n\tsukr with sani")
-        # dosha_match_count = dosha_match_count + 1
         if(params.sukr_house[0] == params.guru_house[0] or (abs(params.groom_lagna_house.index(params.guru_house[0]) - params.groom_lagna_house.index(params.sukr_house[0])) in [4,6,8])):
             params.f.write("\n\t\tAttained nivarthi by guru influence at: "+str(abs(params.groom_lagna_house.index(params.guru_house[0]) - params.sani_index) +1)+" place")
     else:
